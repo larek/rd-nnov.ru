@@ -18,8 +18,8 @@ class RestaurantSearch extends Restaurant
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['title', 'concept', 'menu', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k'], 'safe'],
+            [['id', 'is_active'], 'integer'],
+            [['title', 'concept', 'menu', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'email', 'coord_g', 'coord_k', 'updatelink'], 'safe'],
         ];
     }
 
@@ -57,6 +57,7 @@ class RestaurantSearch extends Restaurant
 
         $query->andFilterWhere([
             'id' => $this->id,
+            'is_active' => $this->is_active,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
@@ -70,8 +71,10 @@ class RestaurantSearch extends Restaurant
             ->andFilterWhere(['like', 'phone', $this->phone])
             ->andFilterWhere(['like', 'soc_pagev', $this->soc_pagev])
             ->andFilterWhere(['like', 'link', $this->link])
+            ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'coord_g', $this->coord_g])
-            ->andFilterWhere(['like', 'coord_k', $this->coord_k]);
+            ->andFilterWhere(['like', 'coord_k', $this->coord_k])
+            ->andFilterWhere(['like', 'updatelink', $this->updatelink]);
 
         return $dataProvider;
     }

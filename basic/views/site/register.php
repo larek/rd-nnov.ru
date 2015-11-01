@@ -17,37 +17,35 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class='col-md-6'>
         <div class="form-group">
-            <label class="required-label control-label"><abbr title="Обязательно заполнить">*</abbr> Название ресторана.</label>
+            <label class="required-label control-label"><abbr title="Обязательно заполнить">*</abbr> Название ресторана</label>
           <input class="title required form-control"  placeholder="" >
         </div>
         
         
         <div class="form-group">
-            <label class="control-label">Концепция ресторана. <span class="text-info text-info-register" id='infodiv-concept'>Не более 140 символов</span></label>
+            <label class="control-label">Концепция ресторана <span class="text-info text-info-register" id='infodiv-concept'>Не более 140 символов</span></label>
             <textarea rows='3' id='concept' class='concept form-control'></textarea>
         </div>
         
         <div class="form-group ">
-            <label class="control-label">Основные блюда. <span class="text-info text-info-register" id='infodiv-menu'>Не более 140 символов</span></label>
+            <label class="control-label">Основные блюда <span class="text-info text-info-register" id='infodiv-menu'>Не более 140 символов</span></label>
             <textarea rows='3' id='menu' class='menu form-control'></textarea>
         </div>
         
         <div class="form-group">
             <label class="required-label control-label"><abbr title="Обязательно заполнить">*</abbr> Адрес в Нижнем Новгороде</label>
-            <table>
-                <tr>
-                    <td><input class="address_street required form-control "  name="street" placeholder="Улица" ></td>
-                    <td><input class="address_building required form-control" name="building" placeholder="Номер дома" ></td>
-                </tr>
-            </table>
-          
+            <input class="address_street required form-control "  name="street" placeholder="Улица" >
+        </div>
+
+        <div class="form-group">
+            <input class="address_building required form-control" name="building" placeholder="Номер дома" >
         </div>
         
         
         
         <div class="form-group">
             <label class="control-label">Пояснение к адресу</label>
-        <input class="address_comment form-control" placeholder="">
+        <input class="address_comment form-control" placeholder="Например, вход через арку">
         </div>
     
     </div>
@@ -60,8 +58,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <td>от</td>
                 <td>
                     <select class='time required form-control'>
-                        <option>9:00</option>
-                        <option>9:30</option>
+                        <option>09:00</option>
+                        <option>09:30</option>
                         <option>10:00</option>
                         <option>10:30</option>
                         <option>11:00</option>
@@ -84,6 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <option>19:30</option>
                         <option>20:00</option>
                         <option>20:30</option>
+                        <option>21:00</option>
                         <option>21:30</option>
                         <option>22:00</option>
                         <option>22:30</option>
@@ -94,8 +93,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <td>до</td>
                 <td>
                 <select class='time2 required form-control'>
-                        <option>9:00</option>
-                        <option>9:30</option>
+                        <option>09:00</option>
+                        <option>09:30</option>
                         <option>10:00</option>
                         <option>10:30</option>
                         <option>11:00</option>
@@ -118,6 +117,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <option>19:30</option>
                         <option>20:00</option>
                         <option>20:30</option>
+                        <option selected>21:00</option>
                         <option>21:30</option>
                         <option>22:00</option>
                         <option>22:30</option>
@@ -142,6 +142,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="form-group">
             <label class="control-label"><abbr title="Обязательно заполнить">*</abbr> Ссылка на пост для анонса в группу ресторанного дня</label>
         <input class="link required form-control" placeholder="Например, https://vk.com/alco4?w=wall-56539720_428%2Fall">
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label"><abbr title="Обязательно заполнить">*</abbr> email для редактирования своей анкеты</label>
+        <input class="email required form-control" placeholder="">
         </div>
         
          <span class="btn btn-default btn-register">Создать ресторан</span>

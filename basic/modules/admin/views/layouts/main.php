@@ -28,8 +28,8 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Ресторанный день в Нижнем Новгороде',
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandLabel' => 'Ресторанный день',
+        'brandUrl' => ['default/index'],
         'options' => [
             'class' => 'navbar-default navbar-fixed-top',
         ],
@@ -39,6 +39,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Главная', 'url' => ['default/index']],
             ['label' => 'FAQ', 'url' => ['faq/index']],
+            ['label' => 'Рестораны', 'url' => ['restaurant/index']],
             ['label' => 'Архив', 'url' => ['archive/index']],
             ['label' => 'Cтраницы', 'url' => ['pages/index']],
             //['label' => 'Контакты', 'url' => ['site/contact']],

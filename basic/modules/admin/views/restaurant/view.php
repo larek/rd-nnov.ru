@@ -43,7 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'coord_g',
             'coord_k',
-            'updatelink',
             'is_active',
         ],
     ]) ?>

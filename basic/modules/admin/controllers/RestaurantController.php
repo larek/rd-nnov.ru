@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\admin\controllers;
 
 use Yii;
 use app\models\Restaurant;
@@ -34,8 +34,7 @@ class RestaurantController extends Controller
     public function actionIndex()
     {
         $query = Restaurant::find();
-        $query->andWhere(['is_active' => 1]);
-        $query->orderBy(['title' => SORT_ASC]);
+        $query->orderBy(['is_active' => SORT_ASC]);
         $searchModel = new RestaurantSearch();
         $dataProvider = new ActiveDataProvider([
                 'query' => $query,
@@ -83,16 +82,17 @@ class RestaurantController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate()
+    public function actionUpdate($id)
     {
-            $updatelink = Yii::$app->request->get();
-            $model = Restaurant::find()->where(['updatelink' => $updatelink])->one();
-            $model->id ? $view = 'update' : $view = 'emptyrest';
+        $model = $this->findModel($id);
 
-            return $this->render( $view, [
-                    'model' => $model,
-                ]);
-        
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**

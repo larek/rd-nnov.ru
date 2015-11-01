@@ -39,10 +39,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'coord_g')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'coord_k')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'updatelink')->textInput(['maxlength' => true]) ?>
     
-   
+    <?= $form->field($model, 'is_active')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

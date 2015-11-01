@@ -45,8 +45,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'coord_k') ?>
 
-    <?php // echo $form->field($model, 'updatelink') ?>
-
     <?php // echo $form->field($model, 'is_active') ?>
 
     <div class="form-group">

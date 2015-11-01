@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\helpers\Url;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -143,6 +144,40 @@ class SiteController extends Controller
         $model->phone = $_GET['phone'];
         $model->soc_pagev = $_GET['soc_pagev'];
         $model->link = $_GET['link'];
-        $model->save();
+        $model->email = $_GET['email'];
+        $model->updatelink = md5(time().$_GET['title']);
+        $url = Url::to(['restaurant/update', 'updatelink' => $model->updatelink]);
+        echo $model->save() ? $url : "false";
+        
+            Yii::$app->mail->compose('layouts/sendlink',['url' => $url, 'sendtype' => 'register' ])
+            ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
+            ->setTo($_GET['email'])
+            ->setSubject('Регистрация rd-nnov.ru')
+            ->send();
+    }
+    
+    public function actionUpdateRest(){
+        $model = Restaurant::find()->where(['id' => $_GET['id']])->one();
+        $model->title = $_GET['title'];
+        $model->concept = $_GET['concept'];
+        $model->menu = $_GET['menu'];
+        $model->address_street = $_GET['address_street'];
+        $model->address_building = $_GET['address_building'];
+        $model->address_comment = $_GET['address_comment'];
+        $model->time = $_GET['time'];
+        $model->time2 = $_GET['time2'];
+        $model->phone = $_GET['phone'];
+        $model->soc_pagev = $_GET['soc_pagev'];
+        $model->link = $_GET['link'];
+        $model->email = $_GET['email'];
+        $model->is_active = 0;
+        $url = Url::to(['restaurant/update', 'updatelink' => $model->updatelink]);
+        echo $model->save() ? $url : "false"; 
+        
+            Yii::$app->mail->compose('layouts/sendlink',['url' => $url ])
+            ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
+            ->setTo($_GET['email'])
+            ->setSubject('Обновление анкеты на rd-nnov.ru')
+            ->send();
     }
 }

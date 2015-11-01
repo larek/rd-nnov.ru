@@ -16,7 +16,9 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content=" width = 1024">
+	<link rel="shortcut icon" href="/restaurantday.ico" type="image/x-icon" />
+	<link rel="icon" href="/restaurantday.ico" type="image/x-icon" /> 
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -31,13 +33,14 @@ AppAsset::register($this);
         'brandLabel' => 'Ресторанный день',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse',
         ],
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
+            ['label' => 'Рестораны', 'url' => ['/restaurant/index']],
             ['label' => 'FAQ', 'url' => ['/site/faq']],
             ['label' => 'Архив', 'url' => ['/site/archive']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
@@ -64,7 +67,7 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; Ресторанный день в Нижнем Новгороде <?= date('Y') ?></p>
-
+        <p class="pull-right"><a href='http://www.restaurantday.org/' target='_blank'>www.restaurantday.org</a></p>
         
     </div>
 </footer>

@@ -1,5 +1,5 @@
 <?php
-
+use yii\helpers\Html;
 /* @var $this yii\web\View */
 
 $this->title = 'Ресторанный день в Нижнем Новгороде';
@@ -11,7 +11,7 @@ $this->title = 'Ресторанный день в Нижнем Новгород
 
         <p class="lead"></p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Создать ресторан</a></p>
+        <p><?= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success']);?></p>
     </div>
 
     <div class="body-content">

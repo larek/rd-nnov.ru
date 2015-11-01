@@ -18,6 +18,7 @@ use Yii;
  * @property string $phone
  * @property string $soc_pagev
  * @property string $link
+ * @property string $email
  * @property string $coord_g
  * @property string $coord_k
  */
@@ -39,7 +40,8 @@ class Restaurant extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['concept', 'menu'], 'string', 'max'=>140],
-            [['title', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k'], 'string', 'max' => 250],
+            [['is_active'], 'integer'],
+            [['title', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k','email', 'updatelink'], 'string', 'max' => 250],
         
         ];
     }
@@ -62,8 +64,11 @@ class Restaurant extends \yii\db\ActiveRecord
             'phone' => 'Телефон',
             'soc_pagev' => 'Страница в соцсетях',
             'link' => 'Ссылка на пост для анонса в группу ресторанного дня',
+            'email' => 'email',
             'coord_g' => 'Coord G',
             'coord_k' => 'Coord K',
+            'updatelink' => 'Update Link',
+            'is_active' => 'Проверен',
         ];
     }
 }

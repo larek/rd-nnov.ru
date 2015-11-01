@@ -15,24 +15,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Добавть свой ресторан', ['site/register'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-       // 'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
-           // ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'yii\grid\SerialColumn'],
 
-            
-            [
-                'attribute' => 'title',
-                'format' => 'raw',
-                'value' => function($data){
-                    return Html::a($data->title,$data->soc_pagev,['target' => '_blank']);
-                }
-            ],
+            //'id',
+            'title',
             [
                 'label' => 'Режим работы',
                 'attribute' => 'time',
@@ -59,7 +50,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $concept.$menu;
                 }
             ],
-
+            [
+                'label' => 'Ссылки',
+                'format' => 'raw',
+                'value' => function($data){
+                    return Html::a('Группа',$data->soc_pagev,['class' => '','target' => '_blank']). "<br>". Html::a('Пост', $data->link,['class' => '','target' => '_blank'])."<br>".Html::a('Обновление','/restaurant-update/'. $data->updatelink,['target' => '_blank']);
+                }
+            ],
             
            // 'concept:ntext',
         //    'menu:ntext',
@@ -69,8 +66,9 @@ $this->params['breadcrumbs'][] = $this->title;
          //   'email:email',
             //'coord_g',
             // 'coord_k',
-           // 'is_active',
+            'is_active',
 
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

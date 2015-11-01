@@ -28,6 +28,18 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'mail' => [
+         'class' => 'yii\swiftmailer\Mailer',
+         //'useFileTransport' => true,
+         'transport' => [
+             'class' => 'Swift_SmtpTransport',
+             'host' => 'smtp.yandex.ru',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+             'username' => 'saitom@yandex.ru',
+             'password' => 'unicode910',
+             'port' => '587', // Port 25 is a very common port too
+             'encryption' => 'tls', // It is often used, check your provider or mail server specs
+         ],
+        ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set
@@ -44,9 +56,13 @@ $config = [
                 'archive/<dayDate>' => 'site/archive-view',
                 'archive' => 'site/archive',
                 'new-rest' => 'site/new-rest',
+                'update-rest' => 'site/update-rest',
                 'register' => 'site/register',
                 'faq' => 'site/faq',
                 'contact' => 'site/contact',
+                'restaurant' => 'restaurant/index',
+                'restaurant/<id>' => 'restaurant/view',
+                'restaurant-update/<updatelink>' => 'restaurant/update',
             ],
         ],
         'log' => [
