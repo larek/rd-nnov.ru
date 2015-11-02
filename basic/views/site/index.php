@@ -1,7 +1,9 @@
 <?php
 use yii\helpers\Html;
 /* @var $this yii\web\View */
-
+$this->registerJsFile('https://code.highcharts.com/highcharts.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('https://code.highcharts.com/modules/exporting.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('js/chart.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->title = 'Ресторанный день в Нижнем Новгороде';
 ?>
 
@@ -45,8 +47,8 @@ $this->title = 'Ресторанный день в Нижнем Новгород
         </div>
         
         <div class='row'>
-            <div class="col-lg-12">
-                <h2 class="page-header">Выпускники ресторанного дня в Нижнем Новгороде</h2>
+            <div class="col-md-12">
+                <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Выпускники ресторанного дня в Нижнем Новгороде</h2>
             </div>
             <div class="col-sm-1 text-center">
                 <a href='https://vk.com/noot.toot' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_noot.jpg" alt=""></a>
@@ -75,10 +77,19 @@ $this->title = 'Ресторанный день в Нижнем Новгород
 
             
         </div>
+        
+        <div class='row'>
+            <div class="col-md-12">
+                <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Статистика ресторанного дня в Нижнем Новгороде</h2>
+            </div>        
+            <div id="container" style="min-width: 810px; height: 400px; margin: 0 auto"></div>    
+        </div>
+        
+        <br><br><br><br><br><br>
         <div class='row'>
             
-            <div class="col-lg-12">
-                <h2 class="page-header">Следить за ресторанным днем в Нижнем Новгороде</h2>
+            <div class="col-md-12">
+                <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Следить за ресторанным днем в Нижнем Новгороде</h2>
             </div>
             
             <div class='col-md-8'>
