@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
 /* @var $this yii\web\View */
-$this->registerJsFile('https://code.highcharts.com/highcharts.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile('https://code.highcharts.com/modules/exporting.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('js/highcharts.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('js/exporting.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/chart.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->title = 'Ресторанный день в Нижнем Новгороде';
 ?>
