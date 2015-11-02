@@ -40,6 +40,7 @@ AppAsset::register($this);
             ['label' => 'Главная', 'url' => ['default/index']],
             ['label' => 'FAQ', 'url' => ['faq/index']],
             ['label' => 'Рестораны', 'url' => ['restaurant/index']],
+            ['label' => 'Площадки', 'url' => ['rent/index']],
             ['label' => 'Архив', 'url' => ['archive/index']],
             ['label' => 'Cтраницы', 'url' => ['pages/index']],
             //['label' => 'Контакты', 'url' => ['site/contact']],

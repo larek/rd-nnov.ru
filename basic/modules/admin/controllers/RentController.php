@@ -3,17 +3,16 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\Restaurant;
-use app\modules\admin\models\RestaurantSearch;
+use app\models\Rent;
+use app\models\RentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\data\ActiveDataProvider;
 
 /**
- * RestaurantController implements the CRUD actions for Restaurant model.
+ * RentController implements the CRUD actions for Rent model.
  */
-class RestaurantController extends Controller
+class RentController extends Controller
 {
     public function behaviors()
     {
@@ -28,13 +27,12 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Lists all Restaurant models.
+     * Lists all Rent models.
      * @return mixed
      */
     public function actionIndex()
     {
-
-        $searchModel = new RestaurantSearch();
+        $searchModel = new RentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -44,7 +42,7 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Displays a single Restaurant model.
+     * Displays a single Rent model.
      * @param integer $id
      * @return mixed
      */
@@ -56,13 +54,13 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Creates a new Restaurant model.
+     * Creates a new Rent model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Restaurant();
+        $model = new Rent();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -74,7 +72,7 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Updates an existing Restaurant model.
+     * Updates an existing Rent model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +91,7 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Deletes an existing Restaurant model.
+     * Deletes an existing Rent model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -106,15 +104,15 @@ class RestaurantController extends Controller
     }
 
     /**
-     * Finds the Restaurant model based on its primary key value.
+     * Finds the Rent model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Restaurant the loaded model
+     * @return Rent the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Restaurant::findOne($id)) !== null) {
+        if (($model = Rent::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

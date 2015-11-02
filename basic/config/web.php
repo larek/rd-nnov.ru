@@ -63,6 +63,7 @@ $config = [
                 'restaurant' => 'restaurant/index',
                 'restaurant/<id>' => 'restaurant/view',
                 'restaurant-update/<updatelink>' => 'restaurant/update',
+                'rent' => 'rent/index',
             ],
         ],
         'log' => [

@@ -19,6 +19,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
+
+        'rowOptions' => function ($model, $index, $widget, $grid){
+    
+          if($model->is_active == 1){
+            return ['class' => 'success'];
+          }else{
+            return [];
+          }
+        },
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -66,7 +75,14 @@ $this->params['breadcrumbs'][] = $this->title;
          //   'email:email',
             //'coord_g',
             // 'coord_k',
-            'is_active',
+            [
+                'attribute' => 'is_active',
+                'format' => 'raw',
+                'value' => function($data){
+                   return $data->is_active == 1 ? Html::tag('span',"",['class' => 'glyphicon glyphicon-ok']) : Html::tag('span',"",['class' => 'glyphicon glyphicon-minus']);
+                }
+            ],
+            //'is_active',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -41,6 +41,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'Рестораны', 'url' => ['/restaurant/index']],
+            ['label' => 'Площадки', 'url' => ['/rent/index']],
             ['label' => 'FAQ', 'url' => ['/site/faq']],
             ['label' => 'Архив', 'url' => ['/site/archive']],
             ['label' => 'Контакты', 'url' => ['/site/contact']],
@@ -56,7 +57,8 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <? Yii::$app->request->pathInfo == "" ? $class = 'container1' : $class = 'container';?>
+    <div class="<?= $class; ?>">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

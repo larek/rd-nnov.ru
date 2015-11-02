@@ -10,6 +10,8 @@ use yii\grid\GridView;
 $this->title = 'Рестораны';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+    
 <div class="restaurant-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -75,3 +77,4 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 
 </div>
+

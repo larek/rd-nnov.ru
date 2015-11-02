@@ -1,11 +1,11 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Restaurant;
+use app\modules\admin\models\Restaurant;
 
 /**
  * RestaurantSearch represents the model behind the search form about `app\models\Restaurant`.
@@ -42,8 +42,7 @@ class RestaurantSearch extends Restaurant
     public function search($params)
     {
         $query = Restaurant::find();
-        $query->andWhere(['is_active' => 1]);
-        //$query->orderBy(['title' => SORT_ASC]);
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);

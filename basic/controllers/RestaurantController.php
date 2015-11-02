@@ -33,13 +33,9 @@ class RestaurantController extends Controller
      */
     public function actionIndex()
     {
-        $query = Restaurant::find();
-        $query->andWhere(['is_active' => 1]);
-        $query->orderBy(['title' => SORT_ASC]);
+
         $searchModel = new RestaurantSearch();
-        $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-            ]);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

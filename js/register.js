@@ -13,6 +13,7 @@ function infoAlert(option){
 $(".btn-register").click(function(){
     var error = 0;
     infoAlert(false);
+    
     $(".required").each(function(){
         if($(this).val()==""){
             error = 1;
@@ -22,6 +23,9 @@ $(".btn-register").click(function(){
             $(this).css('border','1px solid #CCCCCC');
         }
     });
+    
+    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+
     if(error == 1){
         infoAlert({
             type : 'error',
@@ -30,7 +34,15 @@ $(".btn-register").click(function(){
         $(".required").each(function(){
             $(this).val()=="" ? $(this).css('border','1px solid red') : $(this).css('border','1px solid #cccccc')
         });
+    }else if(!pattern.test($(".email").val())){
+         infoAlert({
+            type : 'error',
+            content : "Неправильный формат email",
+        });
+        $(".email").css('border','1px solid red');
     }else{
+        $(this).html("Идет запрос...");
+        $(this).addClass('disabled');
         var title = $(".title").val();
         var concept = $(".concept").val();
         var menu = $(".menu").val();
@@ -80,6 +92,9 @@ $(".btn-updaterest").click(function(){
             $(this).css('border','1px solid #CCCCCC');
         }
     });
+    
+    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+    
     if(error == 1){
         infoAlert({
             type : 'error',
@@ -88,7 +103,15 @@ $(".btn-updaterest").click(function(){
         $(".required").each(function(){
             $(this).val()=="" ? $(this).css('border','1px solid red') : $(this).css('border','1px solid #cccccc')
         });
+    }else if(!pattern.test($(".email").val())){
+         infoAlert({
+            type : 'error',
+            content : "Неправильный формат email",
+        });
+        $(".email").css('border','1px solid red');
     }else{
+        $(this).html("Идет запрос...");
+        $(this).addClass('disabled');
         var id = $(this).attr('id');
         var title = $(".title").val();
         var concept = $(".concept").val();

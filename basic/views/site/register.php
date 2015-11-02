@@ -8,6 +8,7 @@ $this->registerJsFile('/js/register.js',['depends' => [yii\web\JqueryAsset::clas
 $this->registerCssFile('/kladrapi-jsclient/jquery.kladr.min.css');
 
 $this->title = "Регистрация ресторана";
+$this->params['breadcrumbs'][] = ['label' => 'Рестораны', 'url' => ['restaurant/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
