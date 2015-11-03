@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\RentSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Площадки';
+$this->title = 'Площадки для проведения ресторанного дня';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="rent-index">

@@ -4,15 +4,18 @@ use yii\helpers\Html;
 $this->registerJsFile('js/highcharts.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/exporting.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/chart.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('js/site.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->title = 'Ресторанный день в Нижнем Новгороде';
 ?>
 
     <div class="front-banner">
-        <h1>РЕСТОРАННЫЙ ДЕНЬ 21.11.2015</h1>
+        <div class='container'>
+        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>21.11.2015</h1>
 
         <p class="lead">Нижний Новгород</p>
 
         <p><?= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success btn-front']);?></p>
+        </div>
     </div>
     
 <div class='container'>
@@ -68,7 +71,7 @@ $this->title = 'Ресторанный день в Нижнем Новгород
             <div class="col-sm-1 text-center">
                 <a href='https://vk.com/time4wine_nn' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_time4wine.jpg" alt=""></a>
             </div>
-            <div class="col-sm-1 text-center">
+            <div class="col-sm-1 text-center" style='display:none'>
                 <a href='https://vk.com/krendelbakery' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_kredel.jpg" alt=""></a>
             </div>
             <div class="col-sm-1 text-center">
