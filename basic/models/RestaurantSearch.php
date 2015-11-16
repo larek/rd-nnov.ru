@@ -46,6 +46,9 @@ class RestaurantSearch extends Restaurant
         //$query->orderBy(['title' => SORT_ASC]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                    'pageSize' => false,
+                ],
         ]);
 
         $this->load($params);

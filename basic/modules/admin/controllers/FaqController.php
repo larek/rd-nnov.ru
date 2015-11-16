@@ -21,17 +21,17 @@ class FaqController extends Controller
     {
         return [
             
-            /*'access' => [
+            'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index','create','update','view'],
+                //'only' => ['index','create','update','view'],
                 'rules' => [
                     [
-                        'actions' => ['index','create','update','view'],
+                       // 'actions' => ['index','create','update','view'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
-            ],*/
+            ],
             
             'verbs' => [
                 'class' => VerbFilter::className(),

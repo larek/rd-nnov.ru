@@ -31,10 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'address',
-            'description',
-            'contact',
-            'condition',
-            'comment',
+            'description:raw',
+            'contact:raw',
+            'condition:raw',
+            'comment:raw',
         ],
     ]) ?>
 

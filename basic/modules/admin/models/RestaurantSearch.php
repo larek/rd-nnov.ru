@@ -45,6 +45,10 @@ class RestaurantSearch extends Restaurant
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                    'pageSize' => false,
+                ],
+            
         ]);
 
         $this->load($params);

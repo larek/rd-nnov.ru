@@ -24,7 +24,14 @@ $this->title = 'Ресторанный день в Нижнем Новгород
 
 <br><br><br>
     <div class="body-content">
-
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class='alert alert-info'>
+                    <h4><span class='glyphicon glyphicon-info-sign'></span> Зачем регистрироваться на этом сайте?</h4>
+                    <p>Чтобы попасть на бумажную карту однодневных ресторанов Нижнего Новгорода и быть проанонсированным в группе <a href='http://vk.com/restaurantday_nn'>http://vk.com/restaurantday_nn</a></p>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-4">
                 <h3>Концепция</h3>
@@ -54,28 +61,31 @@ $this->title = 'Ресторанный день в Нижнем Новгород
                 <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Выпускники ресторанного дня в Нижнем Новгороде</h2>
             </div>
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/noot.toot' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_noot.jpg" alt=""></a>
+                <a href='https://vk.com/noot.toot' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_noot.jpg" alt=""></a>
             </div>
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/madlen_nn' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_madlen.jpg" alt=""></a>
+                <a href='https://vk.com/madlen_nn' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_madlen.jpg" alt=""></a>
             </div> 
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/freakadely' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_freakadely.jpg" alt=""></a>
+                <a href='https://vk.com/freakadely' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_freakadely.jpg" alt=""></a>
             </div>
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/jamfactory' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_jamfactory.jpg" alt=""></a>
+                <a href='https://vk.com/jamfactory' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_jamfactory.jpg" alt=""></a>
             </div>
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/burritofamily' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_burrito.jpg" alt=""></a>
+                <a href='https://vk.com/burritofamily' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_burrito.jpg" alt=""></a>
             </div>
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/time4wine_nn' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_time4wine.jpg" alt=""></a>
-            </div>
-            <div class="col-sm-1 text-center" style='display:none'>
-                <a href='https://vk.com/krendelbakery' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_kredel.jpg" alt=""></a>
+                <a href='https://vk.com/time4wine_nn' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_time4wine.jpg" alt=""></a>
             </div>
             <div class="col-sm-1 text-center">
-                <a href='https://vk.com/cakeandpie' target='_blank'><img class="img-circle img-responsive img-center" src="/images/alumni_cakepike.jpg" alt=""></a>
+                <a href='https://vk.com/krendelbakery' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_krendel2.jpg" alt=""></a>
+            </div>
+            <div class="col-sm-1 text-center">
+                <a href='https://vk.com/cakeandpie' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_cakepike.jpg" alt=""></a>
+            </div>
+            <div class="col-sm-1 text-center">
+                <a href='https://vk.com/emotionalcuisine' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_emotionalcuisine.jpg" alt=""></a>
             </div>
 
             
@@ -85,7 +95,7 @@ $this->title = 'Ресторанный день в Нижнем Новгород
             <div class="col-md-12">
                 <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Статистика ресторанного дня в Нижнем Новгороде</h2>
             </div>        
-            <div id="container" style="min-width: 810px; height: 400px; margin: 0 auto"></div>    
+            <div id="container" class='clearfix' style="min-width: 810px; height: 400px; margin: 0 auto"></div>    
         </div>
         
         <br><br><br><br><br><br>

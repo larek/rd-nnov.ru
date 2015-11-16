@@ -15,6 +15,14 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+    
+<meta property="og:image" content="http://rd-nnov.ru/images/front-page-banner.jpg"/>
+<meta property="og:site_name" content="Ресторанный день 21 ноября 2015"/>
+<meta property="og:title" content="Как попасть в группу ресторанного дня и на бумажную карту ресторанов?"/>
+<meta property="og:description" content="Ресторанный день в Нижнем Новгороде. Список ресторанов и площадок. Ответы на популярные вопросы"/>
+<meta property="og:url" content="http://rd-nnov.ru/<?= Yii::$app->request->pathInfo?>"/>
+<meta property="og:type" content="article"/>
+
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content=" width = 1024">
 	<link rel="shortcut icon" href="/restaurantday.ico" type="image/x-icon" />
@@ -75,6 +83,37 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter33392643 = new Ya.Metrika({
+                    id:33392643,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/33392643" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 </body>
 </html>
 <?php $this->endPage() ?>

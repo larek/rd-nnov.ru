@@ -1,0 +1,19 @@
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} (.*)
+#RewriteCond %{REQUEST_URI} /$ [NC]
+#RewriteRule ^(.*)(/)$ $1 [L,R=301]
+
+#RewriteCond $1 !^(favicon\.ico)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+# otherwise forward it to index.php
+RewriteRule . index.php

@@ -8,6 +8,7 @@ use app\models\RentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * RentController implements the CRUD actions for Rent model.
@@ -17,6 +18,18 @@ class RentController extends Controller
     public function behaviors()
     {
         return [
+            
+            'access' => [
+                'class' => AccessControl::className(),
+                //'only' => ['index','create','update','view'],
+                'rules' => [
+                    [
+                       // 'actions' => ['index','create','update','view'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

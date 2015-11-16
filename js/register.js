@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 function infoAlert(option){
     if(option.type == 'error'){
         $(".infowrap").html("<div class='alert alert-danger text-center'><span class='glyphicon glyphicon glyphicon-exclamation-sign'></span> "+option.content+"</div>");
@@ -149,4 +151,15 @@ $(".btn-updaterest").click(function(){
             console.log(data);
         });
     }
+});
+
+
+    $("input.link").popover({
+        placement: "left",
+        html: true,
+        trigger: 'focus',
+        title: "Мы сделаем репост этого сообщения в сообщество ресторанного дня. ",
+        content : "Требования к анонсу:<br>1) Содержит информацию блюдах, месте и времени работы однодневного ресторана.<br>2) В тексте нет упоминаний коммерческих брендов и рекламы чего-либо, кроме самого однодневного ресторана.<br><br>Скопируйте адрес из адресной строки браузера, c https:// и так далее"
+    });
+
 });
