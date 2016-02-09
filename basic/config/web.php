@@ -58,6 +58,7 @@ $config = [
                 'new-rest' => 'site/new-rest',
                 'update-rest' => 'site/update-rest',
                 'register' => 'site/register',
+                'stopregister' => 'site/stopregister',
                 'faq' => 'site/faq',
                 'contact' => 'site/contact',
                 'restaurant' => 'restaurant/index',

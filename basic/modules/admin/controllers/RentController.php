@@ -3,8 +3,8 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Rent;
-use app\models\RentSearch;
+use app\modules\admin\models\Rent;
+use app\modules\admin\models\RentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -18,7 +18,7 @@ class RentController extends Controller
     public function behaviors()
     {
         return [
-            
+
             'access' => [
                 'class' => AccessControl::className(),
                 //'only' => ['index','create','update','view'],

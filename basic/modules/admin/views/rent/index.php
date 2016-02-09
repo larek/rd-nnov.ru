@@ -30,6 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'address:raw',
             'description:raw',
             'contact:raw',
+            [
+              'attribute' => 'status',
+              'format' => 'raw',
+              'value' => function($data){
+                return $data->status == 0 ? "Скрыт" : "Опубликован";
+              }
+            ],
             // 'condition',
             // 'comment',
 

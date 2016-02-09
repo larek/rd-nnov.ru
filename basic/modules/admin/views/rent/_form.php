@@ -13,6 +13,8 @@ use dosamigos\tinymce\TinyMce;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'status')->checkbox(['label' => 'Опубликован']) ?>
+
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>

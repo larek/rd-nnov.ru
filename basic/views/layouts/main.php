@@ -15,7 +15,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    
+
 <meta property="og:image" content="http://rd-nnov.ru/images/front-page-banner.jpg"/>
 <meta property="og:site_name" content="Ресторанный день 21 ноября 2015"/>
 <meta property="og:title" content="Как попасть в группу ресторанного дня и на бумажную карту ресторанов?"/>
@@ -26,11 +26,11 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content=" width = 1024">
 	<link rel="shortcut icon" href="/restaurantday.ico" type="image/x-icon" />
-	<link rel="icon" href="/restaurantday.ico" type="image/x-icon" /> 
+	<link rel="icon" href="/restaurantday.ico" type="image/x-icon" />
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    
+
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -48,7 +48,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Рестораны', 'url' => ['/restaurant/index']],
+            ['label' => 'Рестораны', 'url' => ['/site/register']],
             ['label' => 'Площадки', 'url' => ['/rent/index']],
             ['label' => 'FAQ', 'url' => ['/site/faq']],
             ['label' => 'Архив', 'url' => ['/site/archive']],
@@ -78,7 +78,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; Ресторанный день в Нижнем Новгороде <?= date('Y') ?></p>
         <p class="pull-right"><a href='http://www.restaurantday.org/' target='_blank'>www.restaurantday.org</a></p>
-        
+
     </div>
 </footer>
 

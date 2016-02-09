@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
 use yii\base\Model;
@@ -42,7 +42,6 @@ class RentSearch extends Rent
     public function search($params)
     {
         $query = Rent::find();
-        $query->andWhere(['status' => 1]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);

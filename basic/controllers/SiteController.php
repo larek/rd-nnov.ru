@@ -63,9 +63,9 @@ class SiteController extends Controller
         return $this->render('archive',[
                 'dayList' => $dayList,
             ]);
-            
+
     }
-    
+
     public function actionArchiveView(){
         $dayDate = Yii::$app->request->get("dayDate");
         $dayList = Archive::find()->orderBy(['dateDay' => SORT_DESC])->all();
@@ -75,17 +75,25 @@ class SiteController extends Controller
                 'content' => $content,
                 'dayDate' => $dayDate,
             ]);
-            
+
     }
 
     public function actionRegister(){
-        return $this->render('register');
+
+
+      return $this->render('stop-register');
+    }
+
+    public function actionStopregister(){
+      $url = parse_url($_SERVER['HTTP_REFERER']);
+      $url['host'] == 'webvisor.com' ? $view = 'register' : $view = 'stop-register';
+      return $this->render($view);
     }
 
     public function actionLogin()
     {
         $this->layout = 'login';
-        
+
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -105,7 +113,7 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
-    
+
     public function actionFaq(){
         $query = Faq::find();
         $query->orderBy(['title' => SORT_ASC]);
@@ -124,13 +132,13 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-    
+
 
     public function actionAbout()
     {
         return $this->render('about');
     }
-    
+
     public function actionNewRest(){
         $model = new Restaurant();
         $model->title = $_GET['title'];
@@ -148,14 +156,14 @@ class SiteController extends Controller
         $model->updatelink = md5(time().$_GET['title']);
         $url = Url::to(['restaurant/update', 'updatelink' => $model->updatelink]);
         echo $model->save() ? $url : "false";
-        
+
             Yii::$app->mail->compose('layouts/sendlink',['url' => $url, 'sendtype' => 'register' ])
             ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
             ->setTo($_GET['email'])
             ->setSubject('Регистрация rd-nnov.ru')
             ->send();
     }
-    
+
     public function actionUpdateRest(){
         $model = Restaurant::find()->where(['id' => $_GET['id']])->one();
         $model->title = $_GET['title'];
@@ -172,8 +180,8 @@ class SiteController extends Controller
         $model->email = $_GET['email'];
         $model->is_active = 0;
         $url = Url::to(['restaurant/update', 'updatelink' => $model->updatelink]);
-        echo $model->save() ? $url : "false"; 
-        
+        echo $model->save() ? $url : "false";
+
             Yii::$app->mail->compose('layouts/sendlink',['url' => $url ])
             ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
             ->setTo($_GET['email'])

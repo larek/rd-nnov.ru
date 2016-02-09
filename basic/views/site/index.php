@@ -10,14 +10,14 @@ $this->title = 'Ресторанный день в Нижнем Новгород
 
     <div class="front-banner">
         <div class='container'>
-        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>21.11.2015</h1>
+        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>21.02.2016</h1>
 
         <p class="lead">Нижний Новгород</p>
 
         <p><?= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success btn-front']);?></p>
         </div>
     </div>
-    
+
 <div class='container'>
 <div class="site-index">
 
@@ -38,24 +38,24 @@ $this->title = 'Ресторанный день в Нижнем Новгород
 
                 <p>Ресторанный день - это международный карнавал еды, когда каждый желающий может создать ресторан, кафе или бар на один день. Это может случиться где угодно: дома, в офисе, на улице, в саду или вашем дворе, в парке, или на пляже.</p>
 
-                
+
             </div>
             <div class="col-sm-4">
                 <h3>Факты</h3>
 
                 <p>Ресторанный день - это крупнейший в мире фестиваль еды, он проходит во всем мире четыре раза в год. Общее число открытых однодневных ресторанов по всему миру насчитывает около 22 000! Более 88 000 рестораторов обслужили около 2,5 миллионов клиентов в 72 странах.</p>
 
-                
+
             </div>
             <div class="col-sm-4">
                 <h3>Правила</h3>
 
                 <p>Пожалуйста, обратите внимание, что все рестораны с чисто коммерческими, политическими или религиозными целями или рестораны, связаные с существующими коммерческими брендами или рекламой коммерческих заведений, будут удалены.</p>
 
-                
+
             </div>
         </div>
-        
+
         <div class='row'>
             <div class="col-md-12">
                 <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Выпускники ресторанного дня в Нижнем Новгороде</h2>
@@ -65,7 +65,7 @@ $this->title = 'Ресторанный день в Нижнем Новгород
             </div>
             <div class="col-sm-1 text-center">
                 <a href='https://vk.com/madlen_nn' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_madlen.jpg" alt=""></a>
-            </div> 
+            </div>
             <div class="col-sm-1 text-center">
                 <a href='https://vk.com/freakadely' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_freakadely.jpg" alt=""></a>
             </div>
@@ -88,28 +88,28 @@ $this->title = 'Ресторанный день в Нижнем Новгород
                 <a href='https://vk.com/emotionalcuisine' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_emotionalcuisine.jpg" alt=""></a>
             </div>
 
-            
+
         </div>
-        
+
         <div class='row'>
             <div class="col-md-12">
                 <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Статистика ресторанного дня в Нижнем Новгороде</h2>
-            </div>        
-            <div id="container" class='clearfix' style="min-width: 810px; height: 400px; margin: 0 auto"></div>    
+            </div>
+            <div id="container" class='clearfix' style="min-width: 810px; height: 400px; margin: 0 auto"></div>
         </div>
-        
+
         <br><br><br><br><br><br>
         <div class='row'>
-            
+
             <div class="col-md-12">
                 <h2 class="page-header"><span class='glyphicon glyphicon-option-vertical'></span> Следить за ресторанным днем в Нижнем Новгороде</h2>
             </div>
-            
+
             <div class='col-md-8'>
                 <h3>Instagram #restaurantdaynn</h3>
                 <!-- INSTANSIVE WIDGET --><script src="//instansive.com/widget/js/instansive.js"></script><iframe src="//instansive.com/widgets/ee5831598734a6c636973465fa5b606331d4fb44.html" id="instansive_ee58315987" name="instansive_ee58315987"  scrolling="no" allowtransparency="true" class="instansive-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
             </div>
-            
+
             <div class='col-md-4'>
                 <h3>www.vk.com</h3>
                 <script type="text/javascript" src="//vk.com/js/api/openapi.js?117"></script>
