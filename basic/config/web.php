@@ -56,6 +56,7 @@ $config = [
                 'archive/<dayDate>' => 'site/archive-view',
                 'archive' => 'site/archive',
                 'new-rest' => 'site/new-rest',
+                'check-text' => 'site/check-text',
                 'update-rest' => 'site/update-rest',
                 'register' => 'site/register',
                 'stopregister' => 'site/stopregister',

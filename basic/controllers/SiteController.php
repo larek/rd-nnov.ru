@@ -139,6 +139,14 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionCheckText(){
+         $data = [
+            'text1' => mb_strlen($_GET['text1'], 'utf-8'),
+            'text2' => mb_strlen($_GET['text2'], 'utf-8'),
+            ];
+         echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    }
+
     public function actionNewRest(){
         $model = new Restaurant();
         $model->title = $_GET['title'];
