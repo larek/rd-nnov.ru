@@ -24,6 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
     
           if($model->is_active == 1){
             return ['class' => 'success'];
+          }elseif($model->is_active == 2){
+            return ['class' => 'danger'];
           }else{
             return [];
           }
@@ -79,6 +81,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'is_active',
                 'format' => 'raw',
                 'value' => function($data){
+                    switch ($data->is_active) {
+                        case 0: return Html::tag('span',"",['class' => 'glyphicon glyphicon-minus']);break;
+                        case 1: return Html::tag('span',"",['class' => 'glyphicon glyphicon-ok']);break;
+                        case 2: return Html::tag('span',"",['class' => 'glyphicon glyphicon-edit']);break;
+                    }
                    return $data->is_active == 1 ? Html::tag('span',"",['class' => 'glyphicon glyphicon-ok']) : Html::tag('span',"",['class' => 'glyphicon glyphicon-minus']);
                 }
             ],

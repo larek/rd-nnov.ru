@@ -186,7 +186,7 @@ class SiteController extends Controller
         $model->soc_pagev = $_GET['soc_pagev'];
         $model->link = $_GET['link'];
         $model->email = $_GET['email'];
-        $model->is_active = 0;
+        $model->is_active = 2;
         $url = Url::to(['restaurant/update', 'updatelink' => $model->updatelink]);
         echo $model->save() ? $url : "false";
 
