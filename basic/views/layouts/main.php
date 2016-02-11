@@ -48,7 +48,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Рестораны', 'url' => ['/site/register']],
+            ['label' => 'Рестораны', 'url' => ['/restaurant/index']],
             ['label' => 'Площадки', 'url' => ['/rent/index']],
             ['label' => 'FAQ', 'url' => ['/site/faq']],
             ['label' => 'Архив', 'url' => ['/site/archive']],
