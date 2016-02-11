@@ -81,7 +81,7 @@ class SiteController extends Controller
     public function actionRegister(){
 
 
-      return $this->render('stop-register');
+      return $this->render('register');
     }
 
     public function actionStopregister(){
