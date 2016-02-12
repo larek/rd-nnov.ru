@@ -190,10 +190,10 @@ class SiteController extends Controller
         $url = Url::to(['restaurant/update', 'updatelink' => $model->updatelink]);
         echo $model->save() ? $url : "false";
 
-            Yii::$app->mail->compose('layouts/sendlink',['url' => $url ])
-            ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
-            ->setTo($_GET['email'])
-            ->setSubject('Обновление анкеты на rd-nnov.ru')
-            ->send();
+            // Yii::$app->mail->compose('layouts/sendlink',['url' => $url ])
+            // ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
+            // ->setTo($_GET['email'])
+            // ->setSubject('Обновление анкеты на rd-nnov.ru')
+            // ->send();
     }
 }

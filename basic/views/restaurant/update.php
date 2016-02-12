@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Рестораны', 'url' => ['in
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?
-if($model->is_active == 0){
+if($model->is_active == 0 || $model->is_active == 2){
     echo Html::beginTag('div',['class' => 'alert alert-info']);
     echo "<span class='glyphicon glyphicon-info-sign'></span> Ваша анкета успешно зарегистрирована и должна пройти модерацию. <br>Сохраните ссылку на эту страницу для того, чтобы иметь возможность редактировать информацию" ;
     echo Html::endTag('div');
