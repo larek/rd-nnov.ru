@@ -1,12 +1,12 @@
+<?
+use yii\helpers\Html;
+?>
+
 <div class="admin-default-index">
-    <h1><?= $this->context->action->uniqueId ?></h1>
-    <p>
-        This is the view content for action "<?= $this->context->action->id ?>".
-        The action belongs to the controller "<?= get_class($this->context) ?>"
-        in the "<?= $this->context->module->id ?>" module.
-    </p>
-    <p>
-        You may customize this page by editing the following file:<br>
-        <code><?= __FILE__ ?></code>
-    </p>
+    <div class="page-header">
+     <h1>Админка-мать</h1>
+    </div>
+
+    <p>Тут вот наверху есть меню, надо тыкать туда и че-то делать в этих разделах</p>
+
 </div>
