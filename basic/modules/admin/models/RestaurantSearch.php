@@ -18,7 +18,7 @@ class RestaurantSearch extends Restaurant
     public function rules()
     {
         return [
-            [['id', 'is_active'], 'integer'],
+            [['id', 'is_active','address_building_num'], 'integer'],
             [['title', 'concept', 'menu', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'email', 'coord_g', 'coord_k', 'updatelink'], 'safe'],
         ];
     }
@@ -55,10 +55,12 @@ class RestaurantSearch extends Restaurant
         $dataProvider->sort->attributes['address_street'] = [
             'asc' => [
                 'restaurant.address_street' => SORT_ASC,
+                'restaurant.address_building_num' => SORT_ASC,
                 'restaurant.address_building' => SORT_ASC,
             ],
             'desc' => [
                 'restaurant.address_street' => SORT_DESC,
+                'restaurant.address_building_num' => SORT_DESC,
                 'restaurant.address_building' => SORT_DESC,
             ],
         ];
@@ -74,6 +76,7 @@ class RestaurantSearch extends Restaurant
         $query->andFilterWhere([
             'id' => $this->id,
             'is_active' => $this->is_active,
+            'address_building_num' => $this->is_active,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'address_street')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address_building')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'address_building_num')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address_comment')->textarea(['rows' => 6]) ?>
 

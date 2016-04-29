@@ -81,7 +81,7 @@ class SiteController extends Controller
     public function actionRegister(){
 
 
-      return $this->render('stop-register');
+      return $this->render('register');
     }
 
     public function actionStopregister(){
@@ -154,6 +154,7 @@ class SiteController extends Controller
         $model->menu = $_GET['menu'];
         $model->address_street = $_GET['address_street'];
         $model->address_building = $_GET['address_building'];
+        $model->address_building_num = intval($_GET['address_building']);
         $model->address_comment = $_GET['address_comment'];
         $model->time = $_GET['time'];
         $model->time2 = $_GET['time2'];
@@ -179,6 +180,7 @@ class SiteController extends Controller
         $model->menu = $_GET['menu'];
         $model->address_street = $_GET['address_street'];
         $model->address_building = $_GET['address_building'];
+        $model->address_building_num = intval($_GET['address_building']);
         $model->address_comment = $_GET['address_comment'];
         $model->time = $_GET['time'];
         $model->time2 = $_GET['time2'];

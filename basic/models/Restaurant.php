@@ -58,6 +58,7 @@ class Restaurant extends \yii\db\ActiveRecord
             'menu' => 'Основные блюда',
             'address_street' => 'Улица',
             'address_building' => 'Номер дома',
+            'address_building_num' => 'Номер дома без буквы',
             'address_comment' => 'Пояснение к адресу',
             'time' => 'Время от',
             'time2' => 'Время до',

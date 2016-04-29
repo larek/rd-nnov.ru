@@ -13,6 +13,7 @@ use Yii;
  * @property string $menu
  * @property string $address_street
  * @property string $address_building
+ * @property string $address_building_num
  * @property string $address_comment
  * @property string $time
  * @property string $phone
@@ -40,7 +41,7 @@ class Restaurant extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['concept', 'menu'], 'string', 'max'=>250],
-            [['is_active'], 'integer'],
+            [['is_active','address_building_num'], 'integer'],
             [['title', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k','email', 'updatelink'], 'string', 'max' => 250],
         
         ];
@@ -58,6 +59,7 @@ class Restaurant extends \yii\db\ActiveRecord
             'menu' => 'Основные блюда',
             'address_street' => 'Улица',
             'address_building' => 'Номер дома',
+            'address_building_num' => 'Номер дома без буквы',
             'address_comment' => 'Пояснение к адресу',
             'time' => 'Время от',
             'time2' => 'Время до',

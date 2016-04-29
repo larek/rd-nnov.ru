@@ -56,6 +56,16 @@ class RestaurantController extends Controller
         ]);
     }
 
+    public function actionParse(){
+        $model = Restaurant::find()->all();
+        foreach ($model as $key => $value) {
+            $new = Restaurant::find()->where(['id' => $value->id])->one();
+            $new->address_building_num = intval($value->address_building);
+            $new->save();
+            echo "<br>".$value->address_building. " - ". intval($value->address_building);
+        }
+    }
+
     /**
      * Displays a single Restaurant model.
      * @param integer $id
