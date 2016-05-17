@@ -17,16 +17,18 @@ $this->registerJsFile('/js/like.js', ['depends' => [\yii\web\JqueryAsset::classN
 	<textarea class='like-boy form-control'  rows="5"><?= $model->boy?></textarea>
 </div>
 
-<div class="col-md-2">
-	<img src="http://www.hunt-dogs.ru/wp-content/uploads/2009/07/russko_evropeyskie_layki.jpg" class='thumbnail img-responsive img' style='margin: 54px 0px 0px 0px;'>	
-	
-	<span class='btn btn-default btn-update-like' style='width:100%'>Обновить</span>
-</div>
+
 
 <div class="col-md-5">
 	<h3>Лайки-девочки</h3>
 	<textarea class='like-girl form-control'  rows="5"><?= $model->girl?></textarea>
 </div>
+
+<div class="col-md-2">
+	<img src="/images/russko_evropeyskie_layki.jpg" class='thumbnail img-responsive img' style='margin: 54px 0px 0px 0px;'>	
+	<span class='btn btn-default btn-update-like' style='width:100%'>Обновить</span>
+</div>
+
 </div>
 
 <br>
