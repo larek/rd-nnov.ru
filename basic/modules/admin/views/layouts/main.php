@@ -43,6 +43,7 @@ AdminAsset::register($this);
             ['label' => 'Площадки', 'url' => ['rent/index']],
             ['label' => 'Архив', 'url' => ['archive/index']],
             ['label' => 'Cтраницы', 'url' => ['pages/index']],
+            ['label' => 'Лайки', 'url' => ['like/index']],
             //['label' => 'Контакты', 'url' => ['site/contact']],
             Yii::$app->user->isGuest ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
