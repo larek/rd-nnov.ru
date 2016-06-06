@@ -123,3 +123,20 @@ a.desc:after {
 .btn-front {
     font-size: 25px;
 }
+
+.rest-table > tbody > tr > td {
+    min-height: 200px !important;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px;
+}
+
+.rest-table > tbody > tr > td:nth-child(2) {
+    padding: 0;
+}
+
+.rest-table > tbody > tr > td:first-child > a {
+    color: #266296;
+    text-decoration: none;
+    font-size: 1.1em;
+}
