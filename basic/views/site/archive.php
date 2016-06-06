@@ -20,9 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?
     foreach($dayList as $item){
         
-        $item->dateDay == $dayDate ? $active = "active" : $active = "";  
-        
-        echo Html::a($item->transdate($item->dateDay),['site/archive-view', 'dayDate' => $item->dateDay],['class'=>'list-group-item '. $active]);    
+        echo Html::a($item->transdate($item->dateDay),['site/archive-view', 'dayDate' => $item->dateDay],['class'=>'list-group-item ']);    
     }
     ?>
     </div>   
