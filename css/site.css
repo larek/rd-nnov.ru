@@ -131,6 +131,11 @@ a.desc:after {
     padding: 25px;
 }
 
+.rest-table > thead > tr > th {
+    text-align: center;
+    padding: 10px;
+}
+
 .rest-table > tbody > tr > td:nth-child(2) {
     padding: 0;
 }
