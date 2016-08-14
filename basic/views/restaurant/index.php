@@ -18,8 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        </p><?//= Html::a('Добавть свой ресторан', ['site/register'], ['class' => 'btn btn-success']) ?>
-        <a href="/maps/Gid_po_restorannomu_dnyu_21_05_2016_final.pdf" target="_blank" class='btn btn-success'>Скачать карту <span class='glyphicon glyphicon-cloud-download'></span></a>
+        </p><?= Html::a('Добавть свой ресторан', ['site/register'], ['class' => 'btn btn-success']) ?>
+        <!-- <a href="/maps/Gid_po_restorannomu_dnyu_21_05_2016_final.pdf" target="_blank" class='btn btn-success'>Скачать карту <span class='glyphicon glyphicon-cloud-download'></span></a> -->
     </p>
 
     <?= GridView::widget([

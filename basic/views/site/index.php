@@ -11,12 +11,12 @@ $this->title = 'Ресторанный день в Нижнем Новгород
     <div class="front-banner">
         <div class="back_banner"></div>
         <div class='container'>
-        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>21.05.2016</h1>
+        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>27.08.2016</h1>
 
         <p class="lead">Нижний Новгород</p>
 
-        <p><?//= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success btn-front']);?>
-        <a href="/maps/Gid_po_restorannomu_dnyu_21_05_2016_final.pdf" target="_blank" class='btn btn-success btn-front'>Скачать карту <span class='glyphicon glyphicon-cloud-download'></span></a>
+        <p><?= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success btn-front']);?>
+        <!-- <a href="/maps/Gid_po_restorannomu_dnyu_21_05_2016_final.pdf" target="_blank" class='btn btn-success btn-front'>Скачать карту <span class='glyphicon glyphicon-cloud-download'></span></a> -->
         </p>
         </div>
     </div>
