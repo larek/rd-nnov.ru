@@ -11,7 +11,7 @@ $this->title = 'Ресторанный день в Нижнем Новгород
     <div class="front-banner">
         <div class="back_banner"></div>
         <div class='container'>
-        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>27.08.2016</h1>
+        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>20.05.2017</h1>
 
         <p class="lead">Нижний Новгород</p>
 
