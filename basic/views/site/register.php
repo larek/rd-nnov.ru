@@ -4,7 +4,7 @@
 $this->registerJsFile('/kladrapi/jquery.kladr.min.js',['depends' => [yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('/kladrapi/examples/js/simple.js',['depends' => [yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('/js/limit.js',['depends' => [yii\web\JqueryAsset::className()]]);
-$this->registerJsFile('/js/register.js',['depends' => [yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('/js/register.js?v=1.0.2',['depends' => [yii\web\JqueryAsset::className()]]);
 $this->registerCssFile('/kladrapi/jquery.kladr.min.css');
 
 $this->title = "Регистрация ресторана";
@@ -141,7 +141,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="form-group">
-            <label class="control-label"><abbr title="Обязательно заполнить">*</abbr> Ссылка на пост для анонса в группу ресторанного дня</label>
+            <label class="control-label"><abbr title="Обязательно заполнить">*</abbr> Ссылка на пост для анонса в группу ресторанного дня <span class="text-info text-info-register">Требования к анонсу: 1) Содержит информацию блюдах, месте и времени работы однодневного ресторана. 2) В тексте нет упоминаний коммерческих брендов и рекламы чего-либо, кроме самого однодневного ресторана</span></label>
         <input class="link required form-control" placeholder="Например, https://vk.com/alco4?w=wall-56539720_428%2Fall">
         </div>
 
