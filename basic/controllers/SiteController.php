@@ -14,6 +14,7 @@ use yii\data\ActiveDataProvider;
 use app\models\Archive;
 use app\models\Pages;
 use app\models\Restaurant;
+use app\modules\admin\models\Settings;
 
 class SiteController extends Controller
 {
@@ -80,14 +81,30 @@ class SiteController extends Controller
 
     public function actionRegister(){
 
-
-      return $this->render('register');
+        $model = Settings::findOne(1);
+        return $this->render($model->value ? 'register' : 'stop-register');
     }
 
     public function actionStopregister(){
       $url = parse_url($_SERVER['HTTP_REFERER']);
       $url['host'] == 'webvisor.com' ? $view = 'register' : $view = 'stop-register';
       return $this->render($view);
+    }
+
+    public function actionRegisterStop(){
+        if(isset($_GET['pass']) && $_GET['pass']=='avatar910'){
+            $model = Settings::findOne(1);
+            $model->value = 0;
+            echo $model->save();
+        }
+    }
+
+    public function actionRegisterOpen(){
+        if(isset($_GET['pass']) && $_GET['pass']=='avatar910'){
+            $model = Settings::findOne(1);
+            $model->value = 1;
+            echo $model->save();
+        }
     }
 
     public function actionLogin()

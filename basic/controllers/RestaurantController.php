@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
+use app\modules\admin\models\Settings;
 
 /**
  * RestaurantController implements the CRUD actions for Restaurant model.
@@ -85,6 +86,10 @@ class RestaurantController extends Controller
             $model = Restaurant::find()->where(['updatelink' => $updatelink])->one();
             $model->id ? $view = 'update' : $view = 'emptyrest';
 
+            $registration = Settings::findOne(1);
+            if(!$registration->value){
+                $view = '../site/stop-register';
+            }
             return $this->render( $view, [
                     'model' => $model,
                 ]);
