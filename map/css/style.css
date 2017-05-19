@@ -1,0 +1,9 @@
+body{
+	margin:0px;
+}
+
+.itemDescription {
+    font-size: 12px;
+    padding: 3px 0px;
+    width: 100%;
+}
