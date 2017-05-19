@@ -240,7 +240,9 @@ class SiteController extends Controller
             $rests = Restaurant::find()->where(['geoobject' => $item->id])->all();
             $dataRest = [];
             foreach($rests as $itemRest){
-                array_push($dataRest, ArrayHelper::toArray($itemRest));
+                $tempArray = ArrayHelper::toArray($itemRest);
+                $tempArray['coord'] = ['latitude' => $itemRest->coord->latitude,'longitude' => $itemRest->coord->longitude];
+                array_push($dataRest, ArrayHelper::toArray($tempArray));
             }
             array_push($data, [
                     'id' => $item->id,
