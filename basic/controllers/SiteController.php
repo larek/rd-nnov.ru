@@ -234,8 +234,22 @@ class SiteController extends Controller
     public function actionGeoobjectsJson(){
         header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
+        $data = [];
         $model = Geoobjects::find()->all();
-        $data = ArrayHelper::toArray($model);
+        foreach($model as $item){
+            $rests = Restaurant::find()->where(['geoobject' => $item->id])->all();
+            $dataRest = [];
+            foreach($rests as $itemRest){
+                array_push($dataRest, ArrayHelper::toArray($itemRest));
+            }
+            array_push($data, [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'latitude' => $item->latitude,
+                    'longitude' => $item->longitude,
+                    'rests' => $dataRest
+                ]);
+        }
         echo json_encode($data);
     }
 }
