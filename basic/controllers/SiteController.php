@@ -254,7 +254,9 @@ class SiteController extends Controller
         $Restaurant = Restaurant::find()->orderBy(['address_street' => SORT_ASC])->all();
         $dataRestaurant = [];
         foreach($Restaurant as $item){
-            array_push($dataRestaurant, ArrayHelper::toArray($item));
+            $tempArray = ArrayHelper::toArray($item);
+            $tempArray['coord'] = ['latitude' => $item->coord->latitude,'longitude' => $item->coord->longitude];
+            array_push($dataRestaurant, $tempArray);
         }
         echo json_encode(['geoobjects' => $data, 'rests' => $dataRestaurant]);
     }

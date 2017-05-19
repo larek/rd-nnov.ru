@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use app\models\Geoobjects;
 /**
  * This is the model class for table "restaurant".
  *
@@ -25,6 +25,10 @@ use Yii;
  */
 class Restaurant extends \yii\db\ActiveRecord
 {
+
+    public function getCoord(){
+        return $this->hasOne(Geoobjects::className(),['id' => 'geoobject']);
+    }
     /**
      * @inheritdoc
      */
