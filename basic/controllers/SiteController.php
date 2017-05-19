@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -214,5 +215,14 @@ class SiteController extends Controller
             // ->setTo($_GET['email'])
             // ->setSubject('Обновление анкеты на rd-nnov.ru')
             // ->send();
+    }
+
+    public function actionRestJson(){
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+        $model = Restaurant::find()->orderBy(['title' => SORT_ASC])->all();
+        $data = ArrayHelper::toArray($model);
+        echo json_encode($data);
+
     }
 }
