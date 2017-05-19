@@ -235,8 +235,8 @@ class SiteController extends Controller
         header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
         $data = [];
-        $model = Geoobjects::find()->all();
-        foreach($model as $item){
+        $Geoobjects = Geoobjects::find()->all();
+        foreach($Geoobjects as $item){
             $rests = Restaurant::find()->where(['geoobject' => $item->id])->all();
             $dataRest = [];
             foreach($rests as $itemRest){
@@ -250,6 +250,12 @@ class SiteController extends Controller
                     'rests' => $dataRest
                 ]);
         }
-        echo json_encode($data);
+
+        $Restaurant = Restaurant::find()->orderBy(['address_street' => SORT_ASC])->all();
+        $dataRestaurant = [];
+        foreach($Restaurant as $item){
+            array_push($dataRestaurant, ArrayHelper::toArray($item));
+        }
+        echo json_encode(['geoobjects' => $data, 'rests' => $dataRestaurant]);
     }
 }
