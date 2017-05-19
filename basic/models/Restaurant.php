@@ -21,6 +21,7 @@ use Yii;
  * @property string $email
  * @property string $coord_g
  * @property string $coord_k
+ * @property integer $geoobject
  */
 class Restaurant extends \yii\db\ActiveRecord
 {
@@ -40,7 +41,7 @@ class Restaurant extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['concept', 'menu'], 'string', 'max'=>250],
-            [['is_active'], 'integer'],
+            [['is_active','geoobject'], 'integer'],
             [['title', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k','email', 'updatelink'], 'string', 'max' => 250],
         
         ];
