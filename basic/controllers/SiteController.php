@@ -221,7 +221,11 @@ class SiteController extends Controller
     public function actionRestJson(){
         header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
-        $model = Restaurant::find()->orderBy(['title' => SORT_ASC])->all();
+        if(isset($_GET['id'])){
+            $model = Restaurant::find()->where(['geoobject' => $_GET['id']])->orderBy(['title' => SORT_ASC])->all();
+        }else{
+            $model = Restaurant::find()->orderBy(['title' => SORT_ASC])->all();
+        }
         $data = ArrayHelper::toArray($model);
         echo json_encode($data);
 
