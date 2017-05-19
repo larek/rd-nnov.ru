@@ -15,6 +15,7 @@ use yii\data\ActiveDataProvider;
 use app\models\Archive;
 use app\models\Pages;
 use app\models\Restaurant;
+use app\models\Geoobjects;
 use app\modules\admin\models\Settings;
 
 class SiteController extends Controller
@@ -224,5 +225,13 @@ class SiteController extends Controller
         $data = ArrayHelper::toArray($model);
         echo json_encode($data);
 
+    }
+
+    public function actionGeoobjectsJson(){
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+        $model = Geoobjects::find()->all();
+        $data = ArrayHelper::toArray($model);
+        echo json_encode($data);
     }
 }
