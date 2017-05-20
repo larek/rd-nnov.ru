@@ -13,7 +13,7 @@
 	<div id="content"></div>
 	</div>
 	<div class="overlay">
-		Веб-приложение работает в только портретной ариентации на мобильных телефонах
+		Веб-приложение работает в портретной ариентации на мобильных телефонах
 	</div>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="boundle.js"></script>
