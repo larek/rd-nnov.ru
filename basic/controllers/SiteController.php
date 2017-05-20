@@ -237,7 +237,7 @@ class SiteController extends Controller
         $data = [];
         $Geoobjects = Geoobjects::find()->all();
         foreach($Geoobjects as $item){
-            $rests = Restaurant::find()->where(['geoobject' => $item->id])->all();
+            $rests = Restaurant::find()->where(['geoobject' => $item->id])->orderBy(['title' => SORT_ASC])->all();
             $dataRest = [];
             foreach($rests as $itemRest){
                 $tempArray = ArrayHelper::toArray($itemRest);
@@ -253,7 +253,7 @@ class SiteController extends Controller
                 ]);
         }
 
-        $Restaurant = Restaurant::find()->orderBy(['address_street' => SORT_ASC])->all();
+        $Restaurant = Restaurant::find()->orderBy(['title' => SORT_ASC])->all();
         $dataRestaurant = [];
         foreach($Restaurant as $item){
             $tempArray = ArrayHelper::toArray($item);
