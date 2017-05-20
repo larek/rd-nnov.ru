@@ -19876,7 +19876,7 @@ var Item = function (_React$Component2) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'list-group-item', onClick: this.props.onPlacemark },
+        { className: 'list-group-item' },
         _react2.default.createElement(
           'h4',
           null,
@@ -19921,6 +19921,11 @@ var Item = function (_React$Component2) {
           this.props.data.address_building,
           ', ',
           this.props.data.address_comment
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'btn-show', onClick: this.props.onPlacemark },
+          '\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043D\u0430 \u043A\u0430\u0440\u0442\u0435'
         )
       );
     }
@@ -20057,6 +20062,11 @@ var App = function (_React$Component3) {
         null,
         _react2.default.createElement(
           'div',
+          { className: this.state.count == 0 ? "preloader" : "hide" },
+          _react2.default.createElement('img', { src: 'img/spiner.svg', alt: '' })
+        ),
+        _react2.default.createElement(
+          'div',
           { className: this.state.count > 0 ? "geoObjectTitle" : "hide" },
           this.state.geoTitle,
           ' : ',
@@ -20073,7 +20083,7 @@ var App = function (_React$Component3) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'btn-allRest', onClick: this.allRest.bind(this) },
+          { className: this.state.count > 0 ? "btn-allRest" : "hide", onClick: this.allRest.bind(this) },
           '\u0412\u0441\u0435 \u0440\u0435\u0441\u0442\u043E\u0440\u0430\u043D\u044B'
         )
       );
