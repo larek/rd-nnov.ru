@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\modules\admin\models\Todolist */
 $this->title = 'Todo';
 
-$this->registerJsFile("/js/react-todo.js",['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile("/js/react-todo-min.js",['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="todolist-create">
