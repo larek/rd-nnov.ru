@@ -9720,6 +9720,7 @@ var App = function (_React$Component2) {
 			var _this10 = this;
 
 			$.post('create-task', { Todolist: { params: this.refs.taskInput.value } }).done(function (res) {
+				_this10.refs.taskInput.value = "";
 				_this10.getList();
 			});
 		}
