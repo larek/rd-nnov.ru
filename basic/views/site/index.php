@@ -3,7 +3,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 $this->registerJsFile('js/highcharts.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/exporting.js',['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerJsFile('js/chart.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('js/chart.js?v=1.0.2',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/site.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->title = 'Ресторанный день в Нижнем Новгороде';
 ?>
