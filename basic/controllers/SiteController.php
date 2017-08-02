@@ -186,7 +186,7 @@ class SiteController extends Controller
         echo $model->save() ? $url : "false";
 
             Yii::$app->mail->compose('layouts/sendlink',['url' => $url, 'sendtype' => 'register' ])
-            ->setFrom(['saitom@yandex.ru' => 'rd-nnov.ru'])
+            ->setFrom(['info@rd-nnov.ru' => 'rd-nnov.ru'])
             ->setTo($_GET['email'])
             ->setSubject('Регистрация rd-nnov.ru')
             ->send();
