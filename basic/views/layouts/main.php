@@ -16,7 +16,7 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
 
-<meta property="og:image" content="http://rd-nnov.ru/images/front-page-banner.jpg"/>
+<meta property="og:image" content="http://rd-nnov.ru/images/front-page-banner-2.jpg"/>
 <meta property="og:site_name" content="Ресторанный день 21 ноября 2015"/>
 <meta property="og:title" content="Как попасть в группу ресторанного дня и на бумажную карту ресторанов?"/>
 <meta property="og:description" content="Ресторанный день в Нижнем Новгороде. Список ресторанов и площадок. Ответы на популярные вопросы"/>

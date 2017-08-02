@@ -107,14 +107,21 @@ a.desc:after {
     border-bottom: 2px solid black;
 }
 
-.front-banner h1 {
+.front-banner-description {
+    margin-top: -310px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding:10px;
+}
+
+.front-banner-description h1 {
     color: white;
     font-size: 57px;
     font-weight: bold;
     text-shadow: 2px 2px black;
 }
 
-.front-banner p.lead {
+.front-banner-description p.lead {
     color: white;
     font-size: 40px;
     text-shadow: 2px 2px black;
