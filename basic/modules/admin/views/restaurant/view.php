@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Restaurant */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Restaurants', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Рестораны', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="restaurant-view">
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -41,9 +41,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'soc_pagev',
             'link',
             'email:email',
-            'coord_g',
-            'coord_k',
-            'is_active',
+            'admin_comment',
+            [
+                'attribute' => 'is_active',
+                'value' => $model->is_active == 1 ? 'Дa' : 'Нет'
+            ],
         ],
     ]) ?>
 

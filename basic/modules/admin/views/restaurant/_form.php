@@ -38,14 +38,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'coord_g')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'coord_k')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'admin_comment')->textarea(['rows' => 6]) ?>
     
     <?= $form->field($model, 'is_active')->checkbox() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

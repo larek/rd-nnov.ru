@@ -42,7 +42,7 @@ class Restaurant extends \yii\db\ActiveRecord
             [['title'], 'required'],
             [['concept', 'menu'], 'string', 'max'=>250],
             [['is_active','address_building_num'], 'integer'],
-            [['title', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k','email', 'updatelink'], 'string', 'max' => 250],
+            [['title', 'address_street', 'address_building', 'address_comment', 'admin_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k','email', 'updatelink'], 'string', 'max' => 250],
         
         ];
     }
@@ -61,6 +61,7 @@ class Restaurant extends \yii\db\ActiveRecord
             'address_building' => 'Номер дома',
             'address_building_num' => 'Номер дома без буквы',
             'address_comment' => 'Пояснение к адресу',
+            'admin_comment' => 'Комментарии админа',
             'time' => 'Время от',
             'time2' => 'Время до',
             'phone' => 'Телефон',
