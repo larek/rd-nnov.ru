@@ -5,6 +5,7 @@ $this->registerJsFile('js/highcharts.js',['depends' => [\yii\web\JqueryAsset::cl
 $this->registerJsFile('js/exporting.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/chart.js?v=1.0.3',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('js/site.js',['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('js/ch-banner.js',['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->title = 'Ресторанный день в Нижнем Новгороде';
 ?>
 
