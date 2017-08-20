@@ -33,7 +33,7 @@ class HelloController extends Controller
     	// get all Restaurants
     	$model = Restaurant::find()->all();
     	foreach($model as $item){
-    		$address = $item->address_street." ".$item->address_building;
+    		$address = trim($item->address_street)." ".trim($item->address_building);
     		// check in Geoobjects table
     		$geoobject = Geoobjects::find()->where(['title' => $address])->one();
     		if(isset($geoobject->id)){ //if address exist write id in rest table

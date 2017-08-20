@@ -244,13 +244,15 @@ class SiteController extends Controller
                 $tempArray['coord'] = ['latitude' => $itemRest->coord->latitude,'longitude' => $itemRest->coord->longitude];
                 array_push($dataRest, ArrayHelper::toArray($tempArray));
             }
-            array_push($data, [
+	    if(count($dataRest)!==0){
+              array_push($data, [
                     'id' => $item->id,
                     'title' => $item->title,
                     'latitude' => $item->latitude,
                     'longitude' => $item->longitude,
-                    'rests' => $dataRest
+                    'rests' => $dataRest,
                 ]);
+	    }
         }
 
         $Restaurant = Restaurant::find()->orderBy(['title' => SORT_ASC])->all();
