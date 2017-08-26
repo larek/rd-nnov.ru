@@ -153,35 +153,24 @@ $(".btn-updaterest").click(function(){
     }else{
         $(this).html("Идет запрос...");
         $(this).addClass('disabled');
-        var id = $(this).attr('id');
-        var title = $(".title").val();
-        var concept = $(".concept").val();
-        var menu = $(".menu").val();
-        var address_street = $(".address_street").val();
-        var address_building = $(".address_building").val();
-        var address_comment = $(".address_comment").val();
-        var time = $(".time").val();
-        var time2 = $(".time2").val();
-        var phone = $(".phone").val();
-        var soc_pagev = $(".soc_pagev").val();
-        var link = $(".link").val();
-        var email = $(".email").val();
+
+        var options = {
+            id: $(this).attr('id'),
+            title: $(".title").val(),
+            concept: $(".concept").val(),
+            menu: $(".menu").val(),
+            address_street: $(".address_street").val(),
+            address_building: $(".address_building").val(),
+            address_comment: $(".address_comment").val(),
+            time: $(".time").val(),
+            time2: $(".time2").val(),
+            phone: $(".phone").val(),
+            soc_pagev: $(".soc_pagev").val(),
+            link: $(".link").val(),
+            email: $(".email").val()
+        };
     
-        $.get("/update-rest", {
-            id : id,
-            title : title,
-            concept : concept,
-            menu : menu,
-            address_street : address_street,
-            address_building : address_building,
-            address_comment : address_comment,
-            time : time,
-            time2 : time2,
-            phone : phone,
-            soc_pagev : soc_pagev,
-            link : link,
-            email : email
-        }).done(function(data){
+        $.get("/update-rest", options).done(function(data){
             if(data !== 'false'){
                 window.location = data;
             }
