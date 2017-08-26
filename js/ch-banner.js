@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 	$("body").keydown(function(r){
 		if(r.keyCode == 80){
 			$(".front-banner").css({

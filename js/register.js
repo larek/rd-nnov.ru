@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
 function infoAlert(option){
     if(option.type == 'error'){

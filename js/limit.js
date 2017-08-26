@@ -14,7 +14,7 @@ function limitChars(textid, limit, infodiv){
     }
 }
 
-$(document).ready(function(){
+$(function(){
     $('#concept').keyup(function(){
         limitChars('concept', 140, 'infodiv-concept');
     });
