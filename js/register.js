@@ -124,14 +124,17 @@ $(".btn-register").click(function(){
 $(".btn-updaterest").click(function(){
     var error = 0;
     infoAlert(false);
+
     $(".required").each(function(){
-        if($(this).val()==""){
+
+        var eachRequired = $(this);
+        if (eachRequired.val() == "") {
             error = 1;
-            $(this).css('border','1px solid red');
+            eachRequired.css('border','1px solid red');
+        } else {
+            eachRequired.css('border','1px solid #CCCCCC');
         }
-        else{
-            $(this).css('border','1px solid #CCCCCC');
-        }
+
     });
     
     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
