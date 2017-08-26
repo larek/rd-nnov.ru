@@ -1,16 +1,25 @@
-$(function(){
+function infoAlert(option) {
+    var infoWrap = $(".infowrap");
+    var preKind = "<div class='alert alert-";
+    var preGlyph = " text-center'><span class='glyphicon glyphicon-";
+    var preContent = "-sign'></span> ";
 
-function infoAlert(option){
-    if(option.type == 'error'){
-        $(".infowrap").html("<div class='alert alert-danger text-center'><span class='glyphicon glyphicon glyphicon-exclamation-sign'></span> "+option.content+"</div>");
+    var result = "";
+
+    if (option.type === 'error'){
+        result += preKind + "danger" + preGlyph + "exclamation";
+        result += preContent + option.content + "</div>";
     }
-    if(option.type == 'success'){
-        $(".infowrap").html("<div class='alert alert-success text-center'><span class='glyphicon glyphicon glyphicon glyphicon-ok-sign'></span> "+option.content+"</div>");
+
+    if (option.type === 'success'){
+        result += preKind + "success" + preGlyph + "ok";
+        result += preContent + option.content + "</div>";
     }
-    if(option == false){
-        $(".infowrap").html("");
-    }
+
+    infoWrap.html(result);
 }
+
+$(function(){
 
 $(".btn-register").click(function(){
     var error = 0;
