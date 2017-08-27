@@ -19,21 +19,26 @@ function infoAlert(option) {
     infoWrap.html(result);
 }
 
+function checkEachRequiredField(){
+    var eachRequired = $(this);
+    if (eachRequired.val() == "") {
+        infoAlert({
+            type: 'error',
+            content: "Заполните обязательные поля, пожалуйста",
+        });
+        eachRequired.css('border','1px solid red');
+    } else {
+        eachRequired.css('border','1px solid #ccc');
+    }
+}
+
 $(function(){
 
 $(".btn-register").click(function(){
-    var error = 0;
+
     infoAlert(false);
     
-    $(".required").each(function(){
-        if($(this).val()==""){
-            error = 1;
-            $(this).css('border','1px solid red');
-        }
-        else{
-            $(this).css('border','1px solid #CCCCCC');
-        }
-    });
+    $(".required").each(checkEachRequiredField);
     
     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 
@@ -44,15 +49,7 @@ $(".btn-register").click(function(){
         //console.log(dataLen.text1);
     });
 
-    if(error == 1){
-        infoAlert({
-            type : 'error',
-            content : "Заполните обязательные поля, пожалуйста",
-        });
-        $(".required").each(function(){
-            $(this).val()=="" ? $(this).css('border','1px solid red') : $(this).css('border','1px solid #cccccc')
-        });
-    }else if(!pattern.test($(".email").val())){
+    if (!pattern.test($(".email").val())) {
         infoAlert({
             type : 'error',
             content : "Неправильный формат email",
@@ -122,32 +119,13 @@ $(".btn-register").click(function(){
 });
 
 $(".btn-updaterest").click(function(){
-    var error = 0;
     infoAlert(false);
 
-    $(".required").each(function(){
+    $(".required").each(checkEachRequiredField);
 
-        var eachRequired = $(this);
-        if (eachRequired.val() == "") {
-            error = 1;
-            eachRequired.css('border','1px solid red');
-        } else {
-            eachRequired.css('border','1px solid #CCCCCC');
-        }
-
-    });
-    
     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-    
-    if(error == 1){
-        infoAlert({
-            type : 'error',
-            content : "Заполните обязательные поля, пожалуйста",
-        });
-        $(".required").each(function(){
-            $(this).val()=="" ? $(this).css('border','1px solid red') : $(this).css('border','1px solid #cccccc')
-        });
-    }else if(!pattern.test($(".email").val())){
+
+    if(!pattern.test($(".email").val())){
          infoAlert({
             type : 'error',
             content : "Неправильный формат email",
