@@ -67,30 +67,33 @@ $(".btn-register").click(function(){
     // if required and email fields filled correct
     if (!$('.required, .email').hasClass('rd-nnov-bad-field')) {
 
+        var $concept = $(".concept");
         var getOptions = {
-            text1: $(".concept").val(),
+            text1: $concept.val(),
             text2: $(".menu").val()
         };
 
         $.get('/check-text', getOptions).done(function(data){
-            dataLen = $.parseJSON(data);
-            text1Len = dataLen.text1;
-            text2Len = dataLen.text2;
-            if (text1Len > 140) {
+            var dataLen = $.parseJSON(data);
+            var textOneTooLong = dataLen.text1 > 140;
+            var textTwoTooLong = dataLen.text2 > 140;
+
+            if (textOneTooLong) {
                 infoAlert({
                     type : 'error',
                     content : "В поле КОНЦЕПИЯ РЕСТОРАНА больше 140 символов",
                 });
-                $(".concept").css('border','1px solid red');
-            } else if (text2Len > 140) {
+                $concept.css('border','1px solid red');
+            } else if (textTwoTooLong) {
                 infoAlert({
                     type : 'error',
                     content : "В поле ОСНОВНЫЕ БЛЮДА больше 140 символов",
                 });
-                $(".concept").css('border','1px solid red');
+                $concept.css('border','1px solid red');
             } else {
-                $(this).html("Идет запрос...");
-                $(this).addClass('disabled');
+                var $this = $(this);
+                $this.html("Идет запрос...");
+                $this.addClass('disabled');
 
                 var options = {
                     title: $(".title").val(),
@@ -124,24 +127,35 @@ $(".btn-register").click(function(){
 });
 
 $(".btn-updaterest").click(function(){
-    infoAlert(false);
-
-    $(".required").each(checkEachRequiredField);
 
     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+    var $email = $(".email");
 
-    if(!pattern.test($(".email").val())){
+    infoAlert(false);
+
+    // check required
+    $(".required").each(checkEachRequiredField);
+
+    // check email
+    if (pattern.test($email.val())) {
+        $email.removeClass("rd-nnov-bad-field");
+    } else {
          infoAlert({
             type : 'error',
             content : "Неправильный формат email",
         });
-        $(".email").css('border','1px solid red');
-    }else{
-        $(this).html("Идет запрос...");
-        $(this).addClass('disabled');
+        $email.css('border','1px solid red');
+        $email.addClass("rd-nnov-bad-field");
+    }
+
+    // if required and email fields filled correct
+    if (!$('.required, .email').hasClass('rd-nnov-bad-field')) {
+        var $this = $(this);
+        $this.html("Идет запрос...");
+        $this.addClass('disabled');
 
         var options = {
-            id: $(this).attr('id'),
+            id: $this.attr('id'),
             title: $(".title").val(),
             concept: $(".concept").val(),
             menu: $(".menu").val(),
@@ -153,7 +167,7 @@ $(".btn-updaterest").click(function(){
             phone: $(".phone").val(),
             soc_pagev: $(".soc_pagev").val(),
             link: $(".link").val(),
-            email: $(".email").val()
+            email: $email.val()
         };
     
         $.get("/update-rest", options).done(function(data){
