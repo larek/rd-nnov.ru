@@ -1,4 +1,4 @@
-function limitChars(textid, limit, infodiv){
+function limitChars(textid, limit, infodiv) {
     var $textId = $('#' + textid);
     var $infoDiv = $('#' + infodiv);
     var textlength = $textId.val().length;
@@ -12,13 +12,12 @@ function limitChars(textid, limit, infodiv){
     }
 }
 
-$(function(){
-    $('#concept').keyup(function(){
+$(function() {
+    $('#concept').change(function(){
         limitChars('concept', 140, 'infodiv-concept');
     });
 
-    $('#menu').keyup(function(){
+    $('#menu').change(function(){
         limitChars('menu', 140, 'infodiv-menu');
     });
-
 });
