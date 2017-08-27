@@ -6,12 +6,12 @@ function infoAlert(option) {
 
     var result = "";
 
-    if (option.type === 'error'){
+    if (option.type === "error"){
         result += preKind + "danger" + preGlyph + "exclamation";
         result += preContent + option.content + "</div>";
     }
 
-    if (option.type === 'success'){
+    if (option.type === "success"){
         result += preKind + "success" + preGlyph + "ok";
         result += preContent + option.content + "</div>";
     }
@@ -23,14 +23,14 @@ function checkEachRequiredField(){
     var eachRequired = $(this);
     if (eachRequired.val() == "") {
         infoAlert({
-            type: 'error',
+            type: "error",
             content: "Заполните обязательные поля, пожалуйста",
         });
-        eachRequired.css('border','1px solid red');
+        eachRequired.css("border","1px solid red");
         eachRequired.addClass('rd-nnov-bad-field');
     } else {
-        eachRequired.css('border','1px solid #ccc');
-        eachRequired.removeClass('rd-nnov-bad-field');
+        eachRequired.css("border","1px solid #ccc");
+        eachRequired.removeClass("rd-nnov-bad-field");
     }
 }
 
@@ -51,78 +51,69 @@ $(".btn-register").click(function(){
     // check email
     if (pattern.test($email.val())) {
 
-        $email.removeClass('rd-nnov-bad-field');
+        $email.removeClass("rd-nnov-bad-field");
 
     } else {
 
         infoAlert({
-            type : 'error',
+            type : "error",
             content : "Неправильный формат email",
         });
-        $email.css('border','1px solid red');
-        $email.addClass('rd-nnov-bad-field');
+        $email.css("border","1px solid red");
+        $email.addClass("rd-nnov-bad-field");
 
     }
 
     // if required and email fields filled correct
-    if (!$('.required, .email').hasClass('rd-nnov-bad-field')) {
+    if (!$(".required, .email").hasClass("rd-nnov-bad-field")) {
 
         var $concept = $(".concept");
-        var getOptions = {
-            text1: $concept.val(),
-            text2: $(".menu").val()
-        };
+        var textOneTooLong = $concept.val() > 140;
+        var textTwoTooLong = $(".menu").val() > 140;
 
-        $.get('/check-text', getOptions).done(function(data){
-            var dataLen = $.parseJSON(data);
-            var textOneTooLong = dataLen.text1 > 140;
-            var textTwoTooLong = dataLen.text2 > 140;
+        if (textOneTooLong) {
+            infoAlert({
+                type : "error",
+                content : "В поле КОНЦЕПИЯ РЕСТОРАНА больше 140 символов",
+            });
+            $concept.css("border","1px solid red");
+        } else if (textTwoTooLong) {
+            infoAlert({
+                type : "error",
+                content : "В поле ОСНОВНЫЕ БЛЮДА больше 140 символов",
+            });
+            $concept.css("border","1px solid red");
+        } else {
+            var $this = $(this);
+            $this.html("Идет запрос...");
+            $this.addClass("disabled");
 
-            if (textOneTooLong) {
-                infoAlert({
-                    type : 'error',
-                    content : "В поле КОНЦЕПИЯ РЕСТОРАНА больше 140 символов",
-                });
-                $concept.css('border','1px solid red');
-            } else if (textTwoTooLong) {
-                infoAlert({
-                    type : 'error',
-                    content : "В поле ОСНОВНЫЕ БЛЮДА больше 140 символов",
-                });
-                $concept.css('border','1px solid red');
-            } else {
-                var $this = $(this);
-                $this.html("Идет запрос...");
-                $this.addClass('disabled');
-
-                var options = {
-                    title: $(".title").val(),
-                    concept: $(".concept").val(),
-                    menu: $(".menu").val(),
-                    address_street: $(".address_street").val(),
-                    address_building: $(".address_building").val(),
-                    address_comment: $(".address_comment").val(),
-                    time: $(".time").val(),
-                    time2: $(".time2").val(),
-                    phone: $(".phone").val(),
-                    soc_pagev: $(".soc_pagev").val(),
-                    link: $(".link").val(),
-                    email: $(".email").val()
-                }
-            
-                $.get("/new-rest", options).done(function(data){
-                    if (data !== 'false') {
-                        window.location = data;
-                    }
-                    console.log(data);
-                }).error(function(data){
-                    console.log(data);
-                });
-
-            }
-            
-        });
+            var options = {
+                title: $(".title").val(),
+                concept: $(".concept").val(),
+                menu: $(".menu").val(),
+                address_street: $(".address_street").val(),
+                address_building: $(".address_building").val(),
+                address_comment: $(".address_comment").val(),
+                time: $(".time").val(),
+                time2: $(".time2").val(),
+                phone: $(".phone").val(),
+                soc_pagev: $(".soc_pagev").val(),
+                link: $(".link").val(),
+                email: $(".email").val()
+            };
         
+            $.get("/new-rest", options).done(function(data){
+                if (data !== "false") {
+                    window.location = data;
+                }
+                console.log(data);
+            }).error(function(data){
+                console.log(data);
+            });
+
+        }
+
     }
 });
 
@@ -141,21 +132,21 @@ $(".btn-updaterest").click(function(){
         $email.removeClass("rd-nnov-bad-field");
     } else {
          infoAlert({
-            type : 'error',
+            type : "error",
             content : "Неправильный формат email",
         });
-        $email.css('border','1px solid red');
+        $email.css("border","1px solid red");
         $email.addClass("rd-nnov-bad-field");
     }
 
     // if required and email fields filled correct
-    if (!$('.required, .email').hasClass('rd-nnov-bad-field')) {
+    if (!$(".required, .email").hasClass("rd-nnov-bad-field")) {
         var $this = $(this);
         $this.html("Идет запрос...");
-        $this.addClass('disabled');
+        $this.addClass("disabled");
 
         var options = {
-            id: $this.attr('id'),
+            id: $this.attr("id"),
             title: $(".title").val(),
             concept: $(".concept").val(),
             menu: $(".menu").val(),
@@ -171,7 +162,7 @@ $(".btn-updaterest").click(function(){
         };
     
         $.get("/update-rest", options).done(function(data){
-            if(data !== 'false'){
+            if(data !== "false"){
                 window.location = data;
             }
             console.log(data);
