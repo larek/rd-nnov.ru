@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 
     $(".btn-update-like").click(function() {
         boy = $(".like-boy").val();
