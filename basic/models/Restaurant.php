@@ -44,7 +44,7 @@ class Restaurant extends \yii\db\ActiveRecord
     {
         return [
             [['title'], 'required'],
-            [['concept', 'menu'], 'string', 'max'=>250],
+            [['concept', 'menu'], 'string', 'max'=>450],
             [['is_active','geoobject'], 'integer'],
             [['title', 'address_street', 'address_building', 'address_comment', 'time', 'time2', 'phone', 'soc_pagev', 'link', 'coord_g', 'coord_k','email', 'updatelink'], 'string', 'max' => 250],
         
