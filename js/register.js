@@ -143,34 +143,53 @@
 
         // if required and email fields filled correct
         if (!$(".required, .email").hasClass("rd-nnov-bad-field")) {
-            var $this = $(this);
-            $this.html("Идет запрос...");
-            $this.addClass("disabled");
 
-            var options = {
-                id: $this.attr("id"),
-                title: $(".title").val(),
-                concept: $(".concept").val(),
-                menu: $(".menu").val(),
-                address_street: $(".address_street").val(),
-                address_building: $(".address_building").val(),
-                address_comment: $(".address_comment").val(),
-                time: $(".time").val(),
-                time2: $(".time2").val(),
-                phone: $(".phone").val(),
-                soc_pagev: $(".soc_pagev").val(),
-                link: $(".link").val(),
-                email: $email.val()
-            };
-        
-            $.get("/update-rest", options).done(function(data){
-                if(data !== "false"){
-                    window.location = data;
-                }
-                console.log(data);
-            }).error(function(data){
-                console.log(data);
-            });
+            var $concept = $(".concept");
+            var textOneTooLong = $concept.val().length > 140;
+            var textTwoTooLong = $(".menu").val().length > 140;
+
+            if (textOneTooLong) {
+                infoAlert({
+                    type : "error",
+                    content : "В поле КОНЦЕПИЯ РЕСТОРАНА больше 140 символов",
+                });
+                $concept.css("border","1px solid red");
+            } else if (textTwoTooLong) {
+                infoAlert({
+                    type : "error",
+                    content : "В поле ОСНОВНЫЕ БЛЮДА больше 140 символов",
+                });
+                $concept.css("border","1px solid red");
+            } else {
+                var $this = $(this);
+                $this.html("Идет запрос...");
+                $this.addClass("disabled");
+
+                var options = {
+                    id: $this.attr("id"),
+                    title: $(".title").val(),
+                    concept: $(".concept").val(),
+                    menu: $(".menu").val(),
+                    address_street: $(".address_street").val(),
+                    address_building: $(".address_building").val(),
+                    address_comment: $(".address_comment").val(),
+                    time: $(".time").val(),
+                    time2: $(".time2").val(),
+                    phone: $(".phone").val(),
+                    soc_pagev: $(".soc_pagev").val(),
+                    link: $(".link").val(),
+                    email: $email.val()
+                };
+            
+                $.get("/update-rest", options).done(function(data){
+                    if(data !== "false"){
+                        window.location = data;
+                    }
+                    console.log(data);
+                }).error(function(data){
+                    console.log(data);
+                });
+            }
         }
     });
 
