@@ -4,7 +4,7 @@
 $this->registerJsFile('/kladrapi/jquery.kladr.min.js',['depends' => [yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('/kladrapi/examples/js/simple.js',['depends' => [yii\web\JqueryAsset::className()]]);
 $this->registerJsFile('/js/limit.js',['depends' => [yii\web\JqueryAsset::className()]]);
-$this->registerJsFile('/js/register.js?v=1.0.2',['depends' => [yii\web\JqueryAsset::className()]]);
+$this->registerJsFile('/js/register.js?v=1.0.3',['depends' => [yii\web\JqueryAsset::className()]]);
 $this->registerCssFile('/kladrapi/jquery.kladr.min.css');
 
 $this->title = "Регистрация ресторана";

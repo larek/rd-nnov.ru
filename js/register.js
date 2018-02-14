@@ -70,8 +70,8 @@
         if (!$(".required, .email").hasClass("rd-nnov-bad-field")) {
 
             var $concept = $(".concept");
-            var textOneTooLong = $concept.val() > 140;
-            var textTwoTooLong = $(".menu").val() > 140;
+            var textOneTooLong = $concept.val().length > 140;
+            var textTwoTooLong = $(".menu").val().length > 140;
 
             if (textOneTooLong) {
                 infoAlert({
