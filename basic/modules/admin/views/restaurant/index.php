@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    <p><?= Html::a($settings->value == 1 ? 'Закрыть регистрацию' : 'Открыть регистрацию', ['change-register'], ['class' => $settings->value == 1 ? 'btn btn-danger' : 'btn btn-success']);?></p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

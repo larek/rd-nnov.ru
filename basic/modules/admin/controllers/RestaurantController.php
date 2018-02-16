@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\modules\admin\models\Restaurant;
 use app\modules\admin\models\RestaurantSearch;
+use app\modules\admin\models\Settings;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -49,13 +50,23 @@ class RestaurantController extends Controller
 
         $searchModel = new RestaurantSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $settings = Settings::findOne(1);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'settings' => $settings,
         ]);
     }
 
+    /** Close and open registration
+     */
+    public function actionChangeRegister(){
+      $model = Settings::findOne(1);
+      $model->value = $model->value == 1 ? 0 : 1;
+      $model->save();
+      return $this->redirect(['index']);
+    } 
 
     /**
      * Displays a single Restaurant model.
