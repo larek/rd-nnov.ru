@@ -14,13 +14,9 @@ $this->title = 'Ресторанный день в Нижнем Новгород
     </div>
     
     <div class='front-banner-description'>
-        <h1>РЕСТОРАННЫЙ ДЕНЬ <br>17.11.2018</h1>
-
+        <h1>РЕСТОРАННЫЙ ДЕНЬ <br><?= $date?></h1>
         <p class="lead">Нижний Новгород</p>
-
-        <p><?= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success btn-front']);?>
-        <!-- <a href="/maps/Gid_po_restorannomu_dnyu_21_05_2016_final.pdf" target="_blank" class='btn btn-success btn-front'>Скачать карту <span class='glyphicon glyphicon-cloud-download'></span></a> -->
-        </p>
+        <p><?= Html::a('Создать ресторан',['site/register'],['class' => 'btn btn-success btn-front']);?> </p>
     </div>
 
 <div class='container'>

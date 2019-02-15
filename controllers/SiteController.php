@@ -58,7 +58,10 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $date = Settings::findOne(2);
+        return $this->render('index', [
+          'date' => $date->value,
+        ]);
     }
 
     public function actionArchive(){
