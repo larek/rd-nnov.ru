@@ -88,6 +88,9 @@ $this->title = 'Ресторанный день в Нижнем Новгород
             <div class="col-sm-1 text-center">
                 <a href='https://vk.com/emotionalcuisine' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/alumni_emotionalcuisine.jpg" alt=""></a>
             </div>
+            <div class="col-sm-1 text-center">
+                <a href='http://grcho.ru' target='_blank'><img class="img-circle img-responsive img-center" src="/images/68x68/grcho-logo.jpg" alt=""></a>
+            </div>
 
 
         </div>
