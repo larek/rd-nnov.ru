@@ -31,16 +31,13 @@
             "yii\\composer\\Installer::postCreateProject"
         ]
     },
-    "config": {
-        "fxp-asset": {
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            },
-            "vcs-driver-options": {
-                "github-no-api": true
-            },
-            "pattern-skip-version": "(-build|-patch)"
+    "repositories": [
+        {
+	    "type": "composer",
+            "url": "https://asset-packagist.org"
         }
+    ],
+    "config": {
+        "fxp-asset": false
     }
 }

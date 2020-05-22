@@ -13,6 +13,10 @@ $config = [
             'layout' => 'main',
         ],
     ],
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset'
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -29,16 +33,16 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mail' => [
-         'class' => 'yii\swiftmailer\Mailer',
-         //'useFileTransport' => true,
-         'transport' => [
-             'class' => 'Swift_SmtpTransport',
-             'host' => 'smtp.yandex.ru',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-             'username' => 'info@rd-nnov.ru',
-             'password' => 'avatarka9101029991',
-             'port' => '587', // Port 25 is a very common port too
-             'encryption' => 'tls', // It is often used, check your provider or mail server specs
-         ],
+            'class' => 'yii\swiftmailer\Mailer',
+            //'useFileTransport' => true,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.yandex.ru',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                'username' => 'info@rd-nnov.ru',
+                'password' => 'avatarka9101029991',
+                'port' => '587', // Port 25 is a very common port too
+                'encryption' => 'tls', // It is often used, check your provider or mail server specs
+            ],
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
